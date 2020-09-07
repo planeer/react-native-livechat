@@ -48,13 +48,11 @@ export default class Chat extends React.Component {
 		if (isChatOn) {
 			return (
 				<View
-					animation="fadeInUp"
 					style={styles.container}
 					ref={(ref) => {
 						this.chat = ref
 					}}
 				>
-					<NavigationBar chatTitle={chatTitle} closeChat={closeChat} />
 					{isReconnecting && <Text style={styles.connectionStatus}>Reconnecting...</Text>}
 					{headerText && <Text style={styles.status}>{headerText}</Text>}
 					<GiftedChat
