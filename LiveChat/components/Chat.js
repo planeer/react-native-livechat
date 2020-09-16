@@ -99,9 +99,7 @@ const styles = StyleSheet.create({
 	container: {
 		width,
 		height: '100%',
-		position: 'absolute',
-		top: 0,
-		left: 0,
+		flex: 1,
 		flexDirection: 'column',
 		backgroundColor: '#fff',
 	},
