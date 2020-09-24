@@ -189,6 +189,17 @@ export default class LiveChat extends Component {
 		})
 	}
 
+	deactivateChat = () => {
+		if (this.state.chatId) {
+			this.customerSDK
+				.deactivateChat({ chatId: this.state.chatId })
+				.then(response => {
+				})
+				.catch(error => {
+				})
+		}
+	}
+
 	handleSendMessage = (message, quickReply) => {
 		const newEventId = String(Math.random())
 		this.setState({
@@ -448,13 +459,7 @@ export default class LiveChat extends Component {
 	}
 
 	shouldDisableComposer = () => {
-		if (!this.state.onlineStatus && !this.state.chatActive) {
-			return true
-		}
-		if (this.state.queued) {
-			return true
-		}
-		return this.state.connectionState !== 'connected'
+		return false;
 	}
 
 	render() {
